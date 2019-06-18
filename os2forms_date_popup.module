@@ -26,3 +26,10 @@ function os2forms_date_popup_webform_component_info() {
   return $components;
 } 
 
+function os2forms_date_popup_init(){
+  if (!path_is_admin(current_path())) {
+    drupal_add_js(drupal_get_path('module', 'os2forms_date_popup') . '/js/bootstrap-datepicker.min.js');
+    drupal_add_js(drupal_get_path('module', 'os2forms_date_popup') . '/js/bootstrap-datepicker.da.min.js');
+    drupal_add_js(drupal_get_path('module', 'os2forms_date_popup') . '/js/init.js');
+  }
+}
